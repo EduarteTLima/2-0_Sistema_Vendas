@@ -41,7 +41,7 @@ public class VisaoMenu {
         return opcaoproduto;
     }
     
-    public static int menuAlteracaopodutos(){
+    public static int menuAlteracaoProdutos(){
         System.out.println("=====================================================================");
         System.out.println("============== ALTERACAO PRODUTO ==============");
         System.out.println("=====================================================================");

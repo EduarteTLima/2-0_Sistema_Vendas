@@ -22,12 +22,15 @@ public class SistemaVendas_2_0 {
             if(opcaoMenu == Constantes.CADASTRAR){
                 ControleSistema.cadastrar();
             }else if(opcaoMenu == Constantes.ALTERAR){
-                ControleSistema.alterar(VisaoMenu.menuAlteracaopodutos());
+                ControleSistema.alterar(VisaoMenu.menuAlteracaoProdutos());
             }else if(opcaoMenu == Constantes.LISTAR){
                 ControleSistema.listar(ControleSistema.produtos);
    
-            }
+            }else if(opcaoMenu == Constantes.REMOVER){
+                ControleSistema.remover(VisaoMenu.menuremocaoProduto());
                 
+            }
+            
         }
         
     }

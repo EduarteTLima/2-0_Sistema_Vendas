@@ -11,6 +11,7 @@ import com.mycompany.visao.VisaoComputador;
 import com.mycompany.visao.VisaoMenu;
 import com.mycompany.visao.VisaoVideoGame;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -69,5 +70,43 @@ public class ControleSistema {
         }
          
     }
+    
+    public static void remover(int indiceProduto){
+        indiceProduto = indiceProduto - 1;
+        
+        Object object = null;
+       
+        try{
+            object = produtos.get(indiceProduto);
+        }catch(Exception e){}
+        
+        if(object != null){
+            
+            if(object instanceof VideoGame){
+                VideoGame videoGame = new VideoGame();
+                videoGame = (VideoGame) object;
+                System.out.println("Deseja remover o produto " + videoGame.getNome() + "( sim / nao )");
+
+            }else if(object instanceof Computador){
+                Computador computador = new Computador();
+                computador = (Computador) object;
+                System.out.println("Deseja remover o produto " + computador.getNome() + "( sim / nao )");
+
+            }
+            String sn = new Scanner(System.in).next().toLowerCase();
+
+            if(sn.equals(Constantes.REMOVER_SIM)){
+                produtos.remove(indiceProduto);
+                System.out.println("produto removido som sucesso");
+
+            }
+        
+        }else{
+            
+            System.out.println("Produto inessistente!");
+                
+        }
+            
+    } 
     
 }
